@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>RK RO Solutions | Pure Water. Better Life.</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "tertiary-fixed-dim": "#69e03e",
+                "on-primary-fixed": "#001c3a",
+                "on-primary-fixed-variant": "#004785",
+                "surface-container-high": "#dee9fc",
+                "surface-container-highest": "#d9e3f6",
+                "tertiary-container": "#185900",
+                "primary": "#003667",
+                "inverse-primary": "#a5c8ff",
+                "on-error-container": "#93000a",
+                "surface": "#f8f9ff",
+                "surface-bright": "#f8f9ff",
+                "primary-fixed": "#d4e3ff",
+                "surface-variant": "#d9e3f6",
+                "secondary": "#00677d",
+                "secondary-container": "#50d9fe",
+                "surface-tint": "#285f9f",
+                "on-primary": "#ffffff",
+                "on-secondary": "#ffffff",
+                "on-error": "#ffffff",
+                "primary-fixed-dim": "#a5c8ff",
+                "surface-container-low": "#eff4ff",
+                "background": "#f8f9ff",
+                "error": "#ba1a1a",
+                "surface-container-lowest": "#ffffff",
+                "on-tertiary-fixed-variant": "#165200",
+                "tertiary": "#0f3f00",
+                "on-secondary-container": "#005c70",
+                "on-surface-variant": "#424750",
+                "outline": "#727781",
+                "secondary-fixed-dim": "#4cd6fb",
+                "on-primary-container": "#94bfff",
+                "error-container": "#ffdad6",
+                "tertiary-fixed": "#84fe58",
+                "on-tertiary-fixed": "#052100",
+                "surface-container": "#e6eeff",
+                "inverse-on-surface": "#eaf1ff",
+                "on-background": "#121c2a",
+                "outline-variant": "#c2c6d2",
+                "surface-dim": "#d0dbed",
+                "on-surface": "#121c2a",
+                "on-tertiary-container": "#60d735",
+                "on-tertiary": "#ffffff",
+                "on-secondary-fixed": "#001f27",
+                "secondary-fixed": "#b3ebff",
+                "primary-container": "#0a4d8c",
+                "inverse-surface": "#27313f",
+                "on-secondary-fixed-variant": "#004e5f"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+            },
+            "spacing": {
+                "stack-md": "24px",
+                "gutter": "24px",
+                "container-max": "1280px",
+                "base": "8px",
+                "margin-mobile": "16px",
+                "stack-sm": "12px",
+                "margin-desktop": "48px",
+                "stack-lg": "48px"
+            },
+            "fontFamily": {
+                "body-md": ["Manrope"],
+                "display-lg-mobile": ["Manrope"],
+                "label-md": ["Manrope"],
+                "headline-md": ["Manrope"],
+                "headline-sm": ["Manrope"],
+                "display-lg": ["Manrope"],
+                "caption": ["Manrope"],
+                "body-lg": ["Manrope"]
+            },
+            "fontSize": {
+                "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                "display-lg-mobile": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "800"}],
+                "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                "headline-md": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "700"}],
+                "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "800"}],
+                "caption": ["12px", {"lineHeight": "16px", "fontWeight": "500"}],
+                "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .water-gradient {
+            background: linear-gradient(135deg, #003667 0%, #00677d 100%);
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .masonry {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-auto-rows: 200px;
+            gap: 24px;
+        }
+        .masonry-item-large { grid-row: span 2; }
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<header class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl shadow-sm">
+<nav class="flex justify-between items-center w-full px-margin-desktop py-4 max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm font-extrabold text-primary">RK RO Solutions</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Products</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Services</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Projects</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">About</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Gallery</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-on-surface-variant hover:opacity-90">dark_mode</button>
+<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-label-md hover:opacity-90 transition-all active:scale-95">Get Quote</button>
+</div>
+</nav>
+</header>
+<!-- Side Floating Utilities -->
+<div class="fixed bottom-base right-base flex flex-col gap-stack-sm z-50">
+<a class="bg-tertiary-container text-on-tertiary-container rounded-full p-4 shadow-lg hover:scale-110 transition-all active:scale-90" href="https://wa.me/yournumber" title="WhatsApp">
+<span class="material-symbols-outlined">chat</span>
+</a>
+<a class="bg-primary text-on-primary rounded-full p-4 shadow-lg hover:scale-110 transition-all active:scale-90" href="tel:+1234567890" title="Call">
+<span class="material-symbols-outlined">call</span>
+</a>
+<button class="bg-primary text-on-primary rounded-full p-4 shadow-lg hover:scale-110 transition-all active:scale-90" onclick="window.scrollTo({top:0, behavior:'smooth'})" title="Top">
+<span class="material-symbols-outlined">arrow_upward</span>
+</button>
+</div>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-screen flex items-center pt-20 overflow-hidden">
+<div class="absolute inset-0 z-0 parallax" data-alt="A vast industrial water treatment plant with high-grade stainless steel pipes and modern filtration units. The facility is clean and well-lit with cool blue ambient light, reflecting an atmosphere of high-end engineering precision and purity. Soft shadows and glass-like reflections emphasize the premium industrial setting." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCa8d1xJ4PCyN2HVcUJ6WAgIsdMsIhK3BzZ8a4CDpQzKeiWlCp1c9ujKSsu9eZ6rzuCVw_9kWi-bEu5nm7NFc6oP747sR9ZIlWKbWMo24hz80R-pWmBcKHKESi-IEwAnhEZgdxia1dK_LbiEfz-pOZ1C-8yXsxPNN40eD59vob5r7n9yaZ0CjWyHdF79X2oKasdJRAeAq034XxUHU48dRAPnmY_rgSQLlindzpPHNx5XThqdg6uyvRaMFIDLrwU7G_sBgyMX5ztHn0')"></div>
+<div class="absolute inset-0 bg-primary/40 backdrop-blur-[2px]"></div>
+<div class="relative z-10 px-margin-desktop max-w-container-max mx-auto w-full grid md:grid-cols-2 gap-12 items-center">
+<div class="text-on-primary">
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg mb-6 leading-tight">Pure Water.<br/><span class="text-secondary-fixed">Better Life.</span></h1>
+<p class="font-body-lg text-body-lg mb-8 opacity-90 max-w-lg">Complete RO Plant Supply, Installation, AMC &amp; Water Treatment Solutions for Homes, Businesses &amp; Industries.</p>
+<div class="flex flex-wrap gap-4">
+<button class="water-gradient px-8 py-4 rounded-xl font-label-md shadow-lg hover:opacity-95 transition-all">Get Free Quote</button>
+<button class="glass px-8 py-4 rounded-xl font-label-md text-primary hover:bg-white transition-all">Chat on WhatsApp</button>
+</div>
+</div>
+<div class="hidden md:block">
+<div class="glass p-8 rounded-2xl relative overflow-hidden">
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-secondary/20 rounded-full blur-3xl"></div>
+<img class="rounded-xl shadow-2xl relative z-10" data-alt="A high-end domestic RO water purifier mounted on a minimalist white marble kitchen wall. The device features a sleek, transparent glass front showing internal filters. Bright, airy morning sunlight streams into the kitchen, highlighting the crystal-clear water in a nearby glass." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiS30PBUUG54a83v3AM0mzLJ5FAV3mKUhI5u8Sv8kV5Eq5pgotEJvMqxbrQOBeIFoJ_f_EY7zjZ88E5qaPTO16am0svWkT082VVIjfMGNPBkO28JoHXyNVPDGseZzGt8OXT_mAlBKlfA9GaiY7KWZT36IodMdndTT26cZXWVb9kFJkeySKSZtCwKnO1FadieR7XazwCqXc41j6BuSdEtvos51gCRehL79g7V1C_hOlArSSAyWTCAdNJ6nm6Hdzo0FjkWzZAP_OVxw"/>
+</div>
+</div>
+</div>
+<!-- Wave Animation -->
+<div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+<svg class="relative block w-full h-[150px]" data-name="Layer 1" preserveaspectratio="none" viewbox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg">
+<path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#f8f9ff"></path>
+</svg>
+</div>
+</section>
+<!-- Statistics Section -->
+<section class="py-stack-lg bg-surface reveal">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter text-center">
+<div class="p-6">
+<div class="text-primary font-display-lg text-display-lg-mobile md:text-display-lg" id="counter1">0</div>
+<p class="font-label-md text-on-surface-variant uppercase tracking-wider">Installations</p>
+</div>
+<div class="p-6">
+<div class="text-primary font-display-lg text-display-lg-mobile md:text-display-lg" id="counter2">0</div>
+<p class="font-label-md text-on-surface-variant uppercase tracking-wider">Commercial Clients</p>
+</div>
+<div class="p-6">
+<div class="text-primary font-display-lg text-display-lg-mobile md:text-display-lg" id="counter3">0</div>
+<p class="font-label-md text-on-surface-variant uppercase tracking-wider">Satisfaction</p>
+</div>
+<div class="p-6">
+<div class="text-primary font-display-lg text-display-lg-mobile md:text-display-lg" id="counter4">0</div>
+<p class="font-label-md text-on-surface-variant uppercase tracking-wider">Years Experience</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Products Section -->
+<section class="py-stack-lg bg-surface-container-low reveal">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<span class="text-secondary font-label-md uppercase tracking-widest">Our Range</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-2">Premium Water Solutions</h2>
+</div>
+<div class="grid md:grid-cols-3 gap-gutter">
+<!-- Product Card 1 -->
+<div class="glass rounded-[16px] overflow-hidden group shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Close up of a sleek wall-mounted domestic water purifier with a digital display showing water quality stats. The design is modern, using premium white and chrome finishes, set against a background of high-end home decor. The lighting is soft and natural, emphasizing the pristine quality of the product." src="https://lh3.googleusercontent.com/aida-public/AB6AXuANxVKH07W1KzNa15TXwuZ8jtkM3jmHlsPt6NtXmGXU4B4-x4BdgUaTjKzzrkFEK-U-Zv8PMAJqSkliWDawaHM8aY_RYDSEglqHHpuNgYHgRLo_5U_K9usy1Be4nnxmnMm0CSHT3PQ4AsO7bElz62Chhq1Xg8qtmqmByqJludUMpKjeMyfgFzbO41zyRTNGPQBWix92dWjV9zlItiFUmv3c3I2_gecb6OryVcAvIyRn8ZfsPWAoqMNXhvF9s79908gMCg1cY0umObw"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary text-on-primary px-3 py-1 rounded-full text-caption font-bold">Best Seller</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Elite Domestic RO</h3>
+<div class="flex items-center gap-2 mb-4">
+<span class="text-secondary font-bold">₹14,499</span>
+<span class="text-on-surface-variant text-caption line-through">₹18,000</span>
+</div>
+<ul class="space-y-2 mb-6 text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> 15 LPH Capacity</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> 1 Year On-site Warranty</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> Alkaline Mineral Boost</li>
+</ul>
+<div class="flex gap-2">
+<button class="flex-1 border-2 border-primary text-primary py-2 rounded-lg font-label-md hover:bg-primary hover:text-on-primary transition-all">View Details</button>
+<button class="bg-tertiary-container text-on-tertiary-container p-2 rounded-lg"><span class="material-symbols-outlined">chat</span></button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="glass rounded-[16px] overflow-hidden group shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A large-scale industrial RO water treatment plant with multiple vertical pressure vessels and complex stainless steel piping. The floor is polished concrete reflecting the bright industrial LED lighting. The scene looks professional, heavy-duty, and extremely clean, following a modern industrial luxury aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkkMlFBqMtJRZX9bK6b74cXM71g4Sc2rCBkOch9UgPhpYT05OxBgzrUqRh4Sb2CywvtSaREz9a49hLTkkzyyqckx4cwLS92IapWcqmXpMQ1WkcwuiMWOhJ3ns8QYiGeGIJ9XKItAWIwL2XYz9WCnlEmiIWLKekarkBbqe4AThwljJNBRAFVM0NXR2oAPyphe48zf9ofCgBzZC9enZpPloe2MYuTmo9IRV2AZdTfXutqbywe7gbY5OvFF2jxzPt7EPNOplECAMJLWM"/>
+<div class="absolute top-4 left-4">
+<span class="bg-secondary text-on-secondary px-3 py-1 rounded-full text-caption font-bold">Industrial</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Industrial RO 1000 LPH</h3>
+<div class="flex items-center gap-2 mb-4">
+<span class="text-secondary font-bold">₹1,85,000</span>
+</div>
+<ul class="space-y-2 mb-6 text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> 1000 Liters Per Hour</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> Stainless Steel Frame</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> Automatic Cleaning</li>
+</ul>
+<div class="flex gap-2">
+<button class="flex-1 border-2 border-primary text-primary py-2 rounded-lg font-label-md hover:bg-primary hover:text-on-primary transition-all">View Details</button>
+<button class="bg-tertiary-container text-on-tertiary-container p-2 rounded-lg"><span class="material-symbols-outlined">chat</span></button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="glass rounded-[16px] overflow-hidden group shadow-sm hover:shadow-xl transition-all duration-500">
+<div class="relative h-64 overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A commercial grade water purification system installed in a high-end corporate office kitchen or cafeteria. The system is discreetly placed with a professional brushed steel finish. The environment is modern with glass partitions and soft overhead lighting, highlighting the efficiency and cleanliness of the installation." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQ8QF1QVzv0SJc_33LbYBpxBT0-rgXhap7RExYuDXmaWL6voaoy5jvNPhmOzAQ6Eb7LxBXdgziQeq4Dl7ne_QlZuml8Z8je5ygF9nciegh45MQs-yvuVIynE-Qxi5WuxtcVUbENVWGoMI5mqUd9oZ03KMb82DQ8hB6H5C_JjJnKVlqukPz3eLntwxskaMzWXVQSxXlqIVaRRh7SDUQZdeY6gTbJXdGCYgyIc4nj98jEn2jrGUHS9H0Fp4UQxYycP45J15CRaaaEl0"/>
+<div class="absolute top-4 left-4">
+<span class="bg-primary-container text-on-primary-container px-3 py-1 rounded-full text-caption font-bold">Commercial</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-2">Commercial RO System</h3>
+<div class="flex items-center gap-2 mb-4">
+<span class="text-secondary font-bold">₹48,999</span>
+<span class="text-on-surface-variant text-caption line-through">₹55,000</span>
+</div>
+<ul class="space-y-2 mb-6 text-on-surface-variant">
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> 50 LPH for Offices</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> Multi-stage Filtration</li>
+<li class="flex items-center gap-2"><span class="material-symbols-outlined text-sm">check_circle</span> 2 Year AMC Included</li>
+</ul>
+<div class="flex gap-2">
+<button class="flex-1 border-2 border-primary text-primary py-2 rounded-lg font-label-md hover:bg-primary hover:text-on-primary transition-all">View Details</button>
+<button class="bg-tertiary-container text-on-tertiary-container p-2 rounded-lg"><span class="material-symbols-outlined">chat</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="py-stack-lg reveal">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+<div class="max-w-2xl">
+<span class="text-secondary font-label-md uppercase tracking-widest">Expertise</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-2">Comprehensive Water Treatment Services</h2>
+</div>
+<button class="text-primary font-label-md flex items-center gap-2 group">
+                        Explore All Services <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-gutter">
+<div class="bg-surface-container-high p-8 rounded-[16px] hover:bg-primary hover:text-on-primary transition-all duration-300 group cursor-pointer">
+<span class="material-symbols-outlined text-[40px] mb-4 text-primary group-hover:text-on-primary">plumbing</span>
+<h4 class="font-headline-sm text-body-lg font-bold mb-2">Domestic Installation</h4>
+<p class="text-caption opacity-80">Quick and clean home setup by certified experts.</p>
+</div>
+<div class="bg-surface-container-high p-8 rounded-[16px] hover:bg-primary hover:text-on-primary transition-all duration-300 group cursor-pointer">
+<span class="material-symbols-outlined text-[40px] mb-4 text-primary group-hover:text-on-primary">factory</span>
+<h4 class="font-headline-sm text-body-lg font-bold mb-2">Industrial Plants</h4>
+<p class="text-caption opacity-80">Large-scale custom solutions for manufacturing.</p>
+</div>
+<div class="bg-surface-container-high p-8 rounded-[16px] hover:bg-primary hover:text-on-primary transition-all duration-300 group cursor-pointer">
+<span class="material-symbols-outlined text-[40px] mb-4 text-primary group-hover:text-on-primary">build</span>
+<h4 class="font-headline-sm text-body-lg font-bold mb-2">Annual Maintenance</h4>
+<p class="text-caption opacity-80">Regular checkups to ensure 100% water purity.</p>
+</div>
+<div class="bg-surface-container-high p-8 rounded-[16px] hover:bg-primary hover:text-on-primary transition-all duration-300 group cursor-pointer">
+<span class="material-symbols-outlined text-[40px] mb-4 text-primary group-hover:text-on-primary">water_drop</span>
+<h4 class="font-headline-sm text-body-lg font-bold mb-2">Filter Replacement</h4>
+<p class="text-caption opacity-80">Genuine filters for all major RO brands.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Why Choose Us -->
+<section class="py-stack-lg bg-surface-container-highest reveal">
+<div class="max-w-container-max mx-auto px-margin-desktop grid md:grid-cols-2 gap-16 items-center">
+<div>
+<span class="text-secondary font-label-md uppercase tracking-widest">Why RK RO?</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-2 mb-8">Unmatched Reliability &amp; Expertise</h2>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0">
+<span class="material-symbols-outlined">verified_user</span>
+</div>
+<div>
+<h5 class="font-body-lg font-bold">Certified Technicians</h5>
+<p class="text-on-surface-variant">Our team consists of highly trained engineers with years of field experience.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0">
+<span class="material-symbols-outlined">workspace_premium</span>
+</div>
+<div>
+<h5 class="font-body-lg font-bold">Genuine Spare Parts</h5>
+<p class="text-on-surface-variant">We only use authentic components ensuring your system lasts longer.</p>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-on-primary shrink-0">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<div>
+<h5 class="font-body-lg font-bold">24x7 Support</h5>
+<p class="text-on-surface-variant">Emergency breakdown service available around the clock.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="relative">
+<img class="rounded-3xl shadow-2xl" data-alt="A professional water technician in a clean, branded RK RO uniform, carrying high-tech testing equipment and a toolkit. The technician is standing in a brightly lit, modern environment, smiling confidently. The image conveys professional trust and technical expertise with a clean, high-end commercial aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA12EUQITh9tCxKOiSl_ASN5O6D_YSENLa2IGo8wko1atdm66HKMFow_ADSc2rcpCrXs1ugLewB1jwSyY9IibGzify0-yOoCEG3QFEVqZM8-s3CnYSTKW72f9HrAveOQec0i8RxsKVC27i7bgjSOEpXS74awnz7Vri36KIj9r8ITSuA9dYNJW4USXON3iiQ7DMF6rjBH54uKUtiWfs9EErK6xSOtpEsxD0JvVhXoDa8IXoRETHvYbvcQYurxqYE8AU77d9q9VdvI70"/>
+<div class="absolute -bottom-8 -left-8 glass p-8 rounded-2xl shadow-xl hidden lg:block">
+<p class="text-primary font-display-lg leading-none">10+</p>
+<p class="font-label-md text-on-surface-variant">Years of Purity</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Featured Projects -->
+<section class="py-stack-lg reveal">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-on-surface mt-2">Major Installations Gallery</h2>
+<p class="text-on-surface-variant mt-4">Witness our engineering excellence across various industries.</p>
+</div>
+<div class="masonry">
+<div class="relative group overflow-hidden rounded-[16px] masonry-item-large">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A vast hotel lobby featuring a hidden commercial RO installation providing water to multiple beverage stations. The setting is luxurious with marble floors and designer lighting. The image captures the scale and integration of RO solutions in high-end hospitality environments." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD74vuIkgiip3QwX4lMS0tywER0xncNVhHPL6YH_EHNIOGW5qZo0RuLaTyV0T4epEpCUtOMFNX61mg9tXPKPidOJfZ1NBHLyxsb6_pnWRL1ymZDJW3MUc3k4U6JYi94NJM1AcfR-LOETJvTM8pfT0hdU6eWbHEJ5ZYgv9MKHqnV6GcHvILIcM94w_reGz3JdoKQsjbyrfxUVK3mF0HinjEXNZnaZBjvOkf-yWDGMyyBBxFSgUP_VKcafVAGzUK7uk-KbQyjhTjNC_M"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+<h4 class="text-white font-body-lg font-bold">Luxury Hotel Project</h4>
+<p class="text-white/80 text-caption">2000 LPH Softener System</p>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-[16px]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A clean, industrial food processing facility where high-purity water is essential. The image shows stainless steel vats and integrated RO units. The lighting is crisp and cool, highlighting the sterile and high-tech nature of the facility." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBXt-jXobWPnJDcArTVuwqQyUiIJulH_dhV3LZYoKuy74XXNeaGAgD1GusubfsyPZIgIWZHdnVlz-imfvI5sgD8iXQpa5E1HPzN52nRqjfpOC5C6WIdCqpk6JvtMghKs-dnJKLzaihvxLy-xFdQwQYr_12pxGs4wxfgfPuPIBx6gk1uTe5LSjWBoclGPCYh6Oq2r5wAsZkwNahPTXNRwxh5ZxKICxzb5kJC-4gltVoJH5mOnqoZ_4H3X2COAy8Fwh6tGbnT7k0nQkc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+<h4 class="text-white font-body-lg font-bold">Food Processing Plant</h4>
+<p class="text-white/80 text-caption">Centralized Purification</p>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-[16px]">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="A modern corporate headquarters with a specialized drinking water station for employees. The design is minimalist and sleek, fitting perfectly into a tech-focused office environment. The lighting is bright and modern." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA8A4U18bYXhtZC_R4olGk0NInOl3nOj0DMaVaTCYscwqEWa_3UGf4Pt768RPlnBe2_8aRM7aYS1rxiqVPWrW2iINNOAfCaTrzN_VF3Wy9BSFF5i6_6v4_2AZKiVL-Xt-mHKZKB8cFqBA0aW7mxaxXjl-iNCbS30yj42ROYBqyhKihAWQJE-RjUSrVwowludxgiP5SzViLtPyFE-s_HJSOeycyv85rIrPTqAWfS0lQW_mVhwF7pXVVip_ZwZTeEwuiZ7esCnk0VZ8Y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+<h4 class="text-white font-body-lg font-bold">Corporate Headquarters</h4>
+<p class="text-white/80 text-caption">Multi-floor RO Network</p>
+</div>
+</div>
+<div class="relative group overflow-hidden rounded-[16px] masonry-item-large">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="An advanced laboratory setting requiring ultra-pure water for scientific experiments. The equipment is highly sophisticated, featuring digital monitoring and multiple stages of deionization. The atmosphere is clinical, professional, and high-tech." src="https://lh3.googleusercontent.com/aida-public/AB6AXuASzRHq3YJKgL6P3g7cwukdyIVNQ8fhoBRA--0bJP3rASmD3zKWk9sE1Z2Et9pIfKkjDvACXAmWzwf0XEGEbhYMXOcHIK5W0chNfusXKYjC4mukbm-OxNVikIhYnrEAno7QYYftNoJWFMe3XxIwwx7GIccI-RaRxo6AQtgv7SLb5ZrPn7bUpRXZF-CLaYQBzGaN-9a3i2yyMYtDpBKX65t0AGSkfV0yDcSp4oQfbd5aTa3abGNiMVWqdlG1n_gNaAz8SZHUQnpFU7g"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-6 flex flex-col justify-end">
+<h4 class="text-white font-body-lg font-bold">Medical Research Lab</h4>
+<p class="text-white/80 text-caption">Ultra-Pure Type I Water</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Table Section -->
+<section class="py-stack-lg bg-surface-container-low reveal">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-on-surface">Transparent Service Pricing</h2>
+</div>
+<div class="overflow-x-auto glass rounded-[16px]">
+<table class="w-full text-left">
+<thead class="bg-primary text-on-primary">
+<tr>
+<th class="p-6 font-label-md">Service Category</th>
+<th class="p-6 font-label-md">Domestic</th>
+<th class="p-6 font-label-md">Commercial</th>
+<th class="p-6 font-label-md">Industrial</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant">
+<tr class="hover:bg-surface-container transition-colors">
+<td class="p-6 font-bold">Installation</td>
+<td class="p-6">Starting at ₹499</td>
+<td class="p-6">Starting at ₹1,999</td>
+<td class="p-6">Custom Quote</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="p-6 font-bold">Annual Maintenance (AMC)</td>
+<td class="p-6">Starting at ₹2,500</td>
+<td class="p-6">Starting at ₹8,000</td>
+<td class="p-6">Contract Based</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="p-6 font-bold">Filter Replacement</td>
+<td class="p-6">₹800 - ₹3,500</td>
+<td class="p-6">Starting at ₹4,500</td>
+<td class="p-6">Based on Capacity</td>
+</tr>
+<tr class="hover:bg-surface-container transition-colors">
+<td class="p-6 font-bold">Water Quality Testing</td>
+<td class="p-6 text-tertiary font-bold">FREE</td>
+<td class="p-6">₹999</td>
+<td class="p-6">₹2,499</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Testimonials -->
+<section class="py-stack-lg reveal overflow-hidden">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="text-center mb-16">
+<h2 class="font-headline-md text-headline-md text-on-surface">Trusted by Thousands</h2>
+</div>
+<div class="flex transition-transform duration-500 gap-6" id="testimonial-slider">
+<div class="min-w-full md:min-w-[400px] glass p-8 rounded-[16px]">
+<div class="flex gap-1 text-tertiary-fixed-dim mb-4">
+<span class="material-symbols-outlined fill">star</span>
+<span class="material-symbols-outlined fill">star</span>
+<span class="material-symbols-outlined fill">star</span>
+<span class="material-symbols-outlined fill">star</span>
+<span class="material-symbols-outlined fill">star</span>
+</div>
+<p class="italic mb-6">"RK RO Solutions provided an excellent installation experience. The water quality improvement is massive, and their AMC service is very punctual."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary-container"></div>
+<div>
+<h6 class="font-bold">Rahul Sharma</h6>
+<p class="text-caption text-on-surface-variant">Home Owner</p>
+</div>
+</div>
+</div>
+<!-- Add more testimonial clones for slider logic if needed -->
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-stack-lg reveal">
+<div class="max-w-container-max mx-auto px-margin-desktop max-w-3xl">
+<h2 class="font-headline-md text-headline-md text-center mb-12">Frequently Asked Questions</h2>
+<div class="space-y-4">
+<div class="glass rounded-xl overflow-hidden">
+<button class="w-full p-6 text-left flex justify-between items-center hover:bg-surface-container transition-colors accordion-toggle">
+<span class="font-bold">How often should I change RO filters?</span>
+<span class="material-symbols-outlined transition-transform">expand_more</span>
+</button>
+<div class="p-6 border-t border-outline-variant hidden">
+<p class="text-on-surface-variant">For domestic units, pre-filters should be changed every 3-6 months, and main RO membranes every 12-18 months depending on water hardness.</p>
+</div>
+</div>
+<div class="glass rounded-xl overflow-hidden">
+<button class="w-full p-6 text-left flex justify-between items-center hover:bg-surface-container transition-colors accordion-toggle">
+<span class="font-bold">Do you provide service for other brands?</span>
+<span class="material-symbols-outlined transition-transform">expand_more</span>
+</button>
+<div class="p-6 border-t border-outline-variant hidden">
+<p class="text-on-surface-variant">Yes, our technicians are trained to service and repair all major water purifier brands with genuine spare parts.</p>
+</div>
+</div>
+<div class="glass rounded-xl overflow-hidden">
+<button class="w-full p-6 text-left flex justify-between items-center hover:bg-surface-container transition-colors accordion-toggle">
+<span class="font-bold">What is covered in an AMC?</span>
+<span class="material-symbols-outlined transition-transform">expand_more</span>
+</button>
+<div class="p-6 border-t border-outline-variant hidden">
+<p class="text-on-surface-variant">Our AMC covers unlimited breakdown calls, 3 mandatory periodic services, and the cost of most electrical components.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Form Section -->
+<section class="py-stack-lg bg-surface reveal">
+<div class="max-w-container-max mx-auto px-margin-desktop">
+<div class="glass rounded-[32px] overflow-hidden grid md:grid-cols-2 shadow-2xl">
+<div class="p-12 water-gradient text-on-primary">
+<h2 class="font-headline-md text-headline-md mb-6">Get in Touch</h2>
+<p class="mb-12 opacity-80">Ready for pure water? Fill out the form or reach us directly via WhatsApp.</p>
+<div class="space-y-8">
+<div class="flex gap-6 items-center">
+<span class="material-symbols-outlined text-[32px]">location_on</span>
+<p>123, Purity Square, Industrial Area Phase II, Bangalore, KA - 560001</p>
+</div>
+<div class="flex gap-6 items-center">
+<span class="material-symbols-outlined text-[32px]">call</span>
+<p>+91 98765 43210 / +91 80 1234 5678</p>
+</div>
+<div class="flex gap-6 items-center">
+<span class="material-symbols-outlined text-[32px]">mail</span>
+<p>support@rkrosolutions.com</p>
+</div>
+</div>
+</div>
+<div class="p-12 bg-white">
+<form class="space-y-6" id="contactForm">
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-caption font-bold text-on-surface-variant mb-2">Full Name</label>
+<input class="w-full bg-surface-container border-0 rounded-[16px] focus:ring-2 focus:ring-secondary" placeholder="John Doe" type="text"/>
+</div>
+<div>
+<label class="block text-caption font-bold text-on-surface-variant mb-2">Phone Number</label>
+<input class="w-full bg-surface-container border-0 rounded-[16px] focus:ring-2 focus:ring-secondary" placeholder="+91 00000 00000" type="tel"/>
+</div>
+</div>
+<div>
+<label class="block text-caption font-bold text-on-surface-variant mb-2">Requirement Type</label>
+<select class="w-full bg-surface-container border-0 rounded-[16px] focus:ring-2 focus:ring-secondary">
+<option>Domestic RO Purifier</option>
+<option>Commercial RO Plant</option>
+<option>Industrial Water Treatment</option>
+<option>Service/Repair</option>
+<option>AMC Plan</option>
+</select>
+</div>
+<div>
+<label class="block text-caption font-bold text-on-surface-variant mb-2">Message</label>
+<textarea class="w-full bg-surface-container border-0 rounded-[16px] focus:ring-2 focus:ring-secondary" placeholder="How can we help you?" rows="4"></textarea>
+</div>
+<button class="w-full water-gradient text-on-primary py-4 rounded-[16px] font-bold text-body-lg shadow-lg hover:shadow-2xl transition-all" type="submit">Submit to WhatsApp</button>
+</form>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant py-stack-lg">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-margin-desktop max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-sm text-headline-sm font-extrabold text-primary mb-6">RK RO Solutions</div>
+<p class="text-on-surface-variant mb-6">Premium water treatment solutions since 2014. Committed to purity and customer health.</p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-colors" href="#"><span class="material-symbols-outlined">face_nod</span></a>
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-colors" href="#"><span class="material-symbols-outlined">photo_camera</span></a>
+<a class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
+</div>
+</div>
+<div>
+<h6 class="text-primary font-bold mb-6">Quick Links</h6>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 inline-block" href="#">Home</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 inline-block" href="#">Our Products</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 inline-block" href="#">AMC Plans</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 inline-block" href="#">Career</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 inline-block" href="#">Blog</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-primary font-bold mb-6">Services</h6>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 inline-block" href="#">Installation</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 inline-block" href="#">Repair &amp; Maintenance</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 inline-block" href="#">Water Analysis</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 inline-block" href="#">Industrial Consultation</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-transform hover:translate-x-1 inline-block" href="#">Softener Solutions</a></li>
+</ul>
+</div>
+<div>
+<h6 class="text-primary font-bold mb-6">Working Hours</h6>
+<ul class="space-y-4 text-on-surface-variant">
+<li class="flex justify-between"><span>Mon - Sat:</span> <span>9 AM - 8 PM</span></li>
+<li class="flex justify-between"><span>Sunday:</span> <span>10 AM - 2 PM</span></li>
+<li class="flex justify-between font-bold text-secondary mt-4"><span>Emergency:</span> <span>24x7</span></li>
+</ul>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-margin-desktop mt-stack-lg pt-8 border-t border-outline-variant text-center text-on-surface-variant text-caption">
+            © 2024 RK RO Water Solutions. All Rights Reserved.
+        </div>
+</footer>
+<script>
+        // Scroll Reveal logic
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealOnScroll = () => {
+            const windowHeight = window.innerHeight;
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('active');
+                }
+            });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Counter Animation logic
+        const counters = [
+            { id: 'counter1', end: 500, suffix: '+' },
+            { id: 'counter2', end: 150, suffix: '+' },
+            { id: 'counter3', end: 98, suffix: '%' },
+            { id: 'counter4', end: 10, suffix: '+' }
+        ];
+
+        let counterStarted = false;
+        const startCounters = () => {
+            if (counterStarted) return;
+            counterStarted = true;
+            counters.forEach(c => {
+                let start = 0;
+                const element = document.getElementById(c.id);
+                const step = c.end / 50;
+                const timer = setInterval(() => {
+                    start += step;
+                    if (start >= c.end) {
+                        element.innerText = c.end + c.suffix;
+                        clearInterval(timer);
+                    } else {
+                        element.innerText = Math.floor(start) + c.suffix;
+                    }
+                }, 30);
+            });
+        };
+
+        const counterSection = document.getElementById('counter1').closest('section');
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) startCounters();
+        }, { threshold: 0.5 });
+        observer.observe(counterSection);
+
+        // Accordion logic
+        document.querySelectorAll('.accordion-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('.material-symbols-outlined');
+                content.classList.toggle('hidden');
+                icon.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+            });
+        });
+
+        // Contact Form Logic
+        document.getElementById('contactForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const inputs = e.target.querySelectorAll('input, select, textarea');
+            let message = "RK RO Enquiry:\n";
+            inputs.forEach(i => {
+                message += `${i.previousElementSibling ? i.previousElementSibling.innerText : 'Detail'}: ${i.value}\n`;
+            });
+            window.open(`https://wa.me/919876543210?text=${encodeURIComponent(message)}`, '_blank');
+        });
+    </script>
+</body></html>
